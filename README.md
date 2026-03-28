@@ -7,6 +7,10 @@ Jetson Orin Nano 4GB + IMX219 MIPI Camera를 이용한 실시간 AI 객체 탐�
 ![YOLOv8n Real-time Detection Demo](docs/yolo_detection_demo.png)
 *YOLOv8n TensorRT INT8 실시간 객체 탐지 (24.2 FPS, Jetson Orin Nano 4GB)*
 
+[![Demo Video](https://img.youtube.com/vi/ltkt5Ixg9oQ/0.jpg)](https://youtube.com/shorts/ltkt5Ixg9oQ)
+
+*실시간 동작 영상 (클릭하여 재생)*
+
 ## Hardware
 
 | 장치 | 역할 |
