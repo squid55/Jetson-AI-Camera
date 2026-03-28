@@ -1,5 +1,6 @@
 *.jpg
-*.png
+# docs/ images are tracked
+!docs/*.png
 *.engine
 *.onnx
 *.pt

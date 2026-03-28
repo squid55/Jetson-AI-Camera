@@ -4,6 +4,9 @@ Jetson Orin Nano 4GB + IMX219 MIPI Camera를 이용한 실시간 AI 객체 탐�
 
 추후 Zybo Z7-20 FPGA CNN과 연동하여 **FPGA 초저지연 전처리 + GPU 고정밀 추론** 융합 시스템 구축 예정.
 
+![YOLOv8n Real-time Detection Demo](docs/yolo_detection_demo.png)
+*YOLOv8n TensorRT INT8 실시간 객체 탐지 (24.2 FPS, Jetson Orin Nano 4GB)*
+
 ## Hardware
 
 | 장치 | 역할 |
