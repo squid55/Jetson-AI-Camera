@@ -3,7 +3,10 @@ import time
 import sys
 import numpy as np
 import threading
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from http.server import BaseHTTPRequestHandler
+from socketserver import ThreadingMixIn
+import http.server
+class ThreadingHTTPServer(ThreadingMixIn, http.server.HTTPServer): pass
 from ultralytics import YOLO
 from pathlib import Path
 
@@ -101,4 +104,4 @@ class YOLOHandler(BaseHTTPRequestHandler):
         pass
 
 print("http://192.168.219.108:8080", flush=True)
-HTTPServer(("0.0.0.0", 8080), YOLOHandler).serve_forever()
+ThreadingHTTPServer(("0.0.0.0", 8080), YOLOHandler).serve_forever()
