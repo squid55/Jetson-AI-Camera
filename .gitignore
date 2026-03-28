@@ -1,0 +1,8 @@
+*.jpg
+*.png
+*.engine
+*.onnx
+*.pt
+__pycache__/
+*.pyc
+datasets/

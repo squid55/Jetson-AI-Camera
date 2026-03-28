@@ -1,0 +1,44 @@
+# Jetson Orin Nano AI Camera - Configuration
+# Zybo Z7-20 + Jetson Orin Nano 통합 시스템
+
+network:
+  jetson_ip: "192.168.1.20"
+  zybo_ip: "192.168.1.10"
+  ports:
+    cnn_result: 5001      # UDP: Zybo -> Jetson (CNN 결과)
+    frame_stream: 5002    # UDP: Zybo -> Jetson (전처리 프레임, 선택)
+    command: 5003         # TCP: Jetson -> Zybo (명령/설정)
+
+camera:
+  sensor_0:
+    id: 0
+    width: 1280
+    height: 720
+    fps: 30
+  sensor_1:
+    id: 1
+    width: 1280
+    height: 720
+    fps: 30
+
+model:
+  weights: "yolov8n.pt"
+  engine: "yolov8n.engine"
+  task: "detect"
+  imgsz: 640
+  conf_threshold: 0.25
+  iou_threshold: 0.45
+  batch_size: 2
+  int8: true
+  half: true
+
+fusion:
+  zybo_confidence_threshold: 0.7   # Zybo CNN 결과 신뢰도 최소값
+  result_timeout_ms: 500           # Zybo 결과 유효 시간
+  enable_visualization: true
+  log_interval: 100                # 프레임마다 로그 출력 간격
+
+system:
+  max_power_mode: true             # nvpmodel -m 0
+  jetson_clocks: true              # sudo jetson_clocks
+  swap_size_gb: 8
